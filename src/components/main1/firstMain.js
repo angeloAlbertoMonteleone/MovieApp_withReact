@@ -1,12 +1,17 @@
 import React from 'react';
-import classes from './firstMain.css';
-import {Container, Row, Col} from 'react-bootstrap';
+import styles from './firstMain.module.css';
+import {Container, Row, Col, Button} from 'react-bootstrap';
 
 const firstMain = () => {
     return (
-        <Container classeName={classes.FirstMain}>
-            <Row>
-                <Col sm={12}></Col>
+        <Container className={styles.FirstMain}>
+            <Row class>
+                <Col sm={12}>
+                    <h1 className={styles.h1}>All Your Favorite Movies in the Same Place</h1>
+                    <h3 className={styles.h3}>Check all the Categories, Personal Lists, Tv Shows, and free Streaming</h3>
+                    <Button className={styles.Button} variant="outline-light">New Releases</Button>{' '}
+                    <Button className={styles.Button} variant="outline-light">My List</Button>{' '}
+                </Col>
             </Row>
         </Container>
     )
