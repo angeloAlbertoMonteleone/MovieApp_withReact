@@ -1,10 +1,10 @@
 import React from 'react';
 import {Navbar, Nav, Form, FormControl, Button, NavDropdown} from 'react-bootstrap';
-import classes from './Navbar.css';
+import styles from './Navbar.module.css';
 
 const navbar = (props) => {
     return (
-        <Navbar className="color-nav" expand="none" variant="dark">
+        <Navbar className={styles.colorNav} expand="none">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" className="mr-auto" />
             <Navbar.Brand href="#hamburgerMenu"></Navbar.Brand>
             <Navbar.Collapse id="responsive-navbar-nav">
