@@ -1,6 +1,6 @@
 import {React} from "react";
 import styles from "./card.module.css";
-import {IMAGE_BASE_URL} from '../environments/environments';
+import {IMAGE_BASE_URL} from '../../../environments/environments';
 
 const card = ({title, poster_path, overview, vote_average}) => {
     return (
