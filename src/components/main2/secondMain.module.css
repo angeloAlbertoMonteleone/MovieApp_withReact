@@ -1,3 +1,17 @@
-.Container {background-color: black; max-width: 100%;}
+.Container {background-color: black; max-width: 100%; position: relative; padding-left: 15px; }
+.movies:hover ~ .transparent_div_right{
+    display: block;
+}
 .h3 {font-size: 1rem; font-family: serif; color: white;}
-.movies {display: flex; overflow-x: auto;}
+.movies {display: flex; overflow: hidden; text-align: center; width: auto; padding-bottom: 10px;}
+.Card {transition: 250ms all;}
+
+.transparent_div_right {
+        position: absolute; right: 0; width: 45px; background: #333333; opacity: 60%; height: 80%;display: block;}
+
+.transparent_div_left {
+    position: absolute;left: 0; width: 45px; background: #333333;
+    opacity: 60%; height: 80%; display: block;}
+
+.left {width: 100%; filter: invert(1); position: absolute; top: 40%;}
+.right {width: 100%;filter: invert(1);position: absolute; top: 40%;}
