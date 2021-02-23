@@ -1,10 +1,16 @@
 import {React} from "react";
 
-export const BASE_URL = 'https://api.themoviedb.org/3';
-export const ENDPOINT_POPULAR = '/movie/popular';
-export const API_KEY = '?api_key=ebe0a7b19063d864de232de72766c4ee&language=en-US&page=';
-export const PAGE = '1';
+const API_KEY = 'ebe0a7b19063d864de232de72766c4ee';
+const requests = {
+    fetchPopular: `/movie/popular?api_key=${API_KEY}&language=en-US`,
+    fetchComedies: `/discover/movie?api_key=${API_KEY}&with_genres=28`,
+    fetchUpcoming: `/movie/upcoming?api_key=${API_KEY}&language=en-US`,
+    fetchFamilies: `/discover/movie?api_key=${API_KEY}&with_genres=10751`,
+    fetchTopRated: `/movie/top_rated?api_key=${API_KEY}&language=en-US`,
+    fetchOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
+    fetchDramas: `/discover/movie?api_key=${API_KEY}&with_genres=18`,
+    fetchThrillers: `/discover/movie?api_key=${API_KEY}&with_genres=53`,
+    fetchHorrors: `/discover/movie?api_key=${API_KEY}&with_genres=27`,
+}
 
-export const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
-
-export default {BASE_URL, ENDPOINT_POPULAR, API_KEY, PAGE, IMAGE_BASE_URL};
+export default requests;
