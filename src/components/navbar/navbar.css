@@ -1,0 +1,31 @@
+.Nav {
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    padding: 10px;
+    z-index: 1;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+}
+
+.nav_black {
+    background-color: black;
+}
+
+.logo {
+    padding: 0 5px;
+    margin-left: 10px;
+    width: 80px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.search {
+    margin-right: 10px;
+    margin-left: auto;
+    width: 23px;
+    object-fit: contain;
+    filter: invert(1);
+}
