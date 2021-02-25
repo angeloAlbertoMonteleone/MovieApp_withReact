@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import './App.css';
 import Aux from '../src/Auxiliary/Auxiliary';
-import Navbar from './components/navbar/navbar';
+import Nav from './components/navbar/navbar';
 import FirstMain from './components/main1/firstMain';
 import Row from './components/row/row';
 import requests from './environments/environments'
@@ -10,7 +10,7 @@ class App extends Component  {
   render () {
     return (
       <Aux>
-        <Navbar></Navbar>
+        <Nav></Nav>
         <FirstMain></FirstMain>
         <Row title="Most Popular" fetchUrl={requests.fetchPopular}></Row>
         <Row title="Comedies" fetchUrl={requests.fetchComedies}></Row>
