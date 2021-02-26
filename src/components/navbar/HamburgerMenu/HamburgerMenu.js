@@ -9,7 +9,7 @@ function HamburgerMenu() {
     const [open, setOpen] = useState(false);
 
         return (
-            <Aux>                   
+            <Aux className="root">                   
                 <div className="Logo-ham" onClick={() => {setOpen(!open)}} >
                     <div className="ham"></div>
                     <div className="ham"></div>
