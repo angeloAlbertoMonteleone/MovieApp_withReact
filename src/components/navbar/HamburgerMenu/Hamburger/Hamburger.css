@@ -4,6 +4,10 @@
 
 .ul-hamburger {
     list-style: none;
+    display: block;
+    max-height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 10px;
 }
 
 .li-hamburger {
@@ -14,17 +18,27 @@
     padding: 10px 20px;
 }
 
+.li-hamburger:hover {
+    background-color: rgb(88, 43, 43);
+    color: rgb(184, 177, 177);
+}
+
 .li-hamburger a {
     cursor: pointer
 }
 
 .logo {
-    padding: 10px;
+    padding: 5px;
+    margin: 5px 0 0 10px;
     width: 80px;
+    border-radius: 15px;
     object-fit: contain;
 }
 
 h3 {
+    font-family: fantasy;
     padding: 10px 20px;
     border-bottom: 1px solid black;
+    color: white;
+    font-size: 1.5rem;
 }
