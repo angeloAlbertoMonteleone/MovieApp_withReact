@@ -14,7 +14,7 @@
     background-color: black;
 }
 
-.logo {
+.Logo {
     padding: 0 5px;
     margin-left: 10px;
     width: 80px;
@@ -22,10 +22,7 @@
     border-radius: 5px;
 }
 
-.search {
-    margin-right: 10px;
-    margin-left: auto;
-    width: 23px;
-    object-fit: contain;
-    filter: invert(1);
+a#collasible-nav-dropdown {
+    color: white;
+    text-decoration: none;
 }
