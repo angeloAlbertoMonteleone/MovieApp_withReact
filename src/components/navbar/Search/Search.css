@@ -1,0 +1,7 @@
+.search {
+    margin-right: 10px;
+    margin-left: auto;
+    width: 23px;
+    object-fit: contain;
+    filter: invert(1);
+}
