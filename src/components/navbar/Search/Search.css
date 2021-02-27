@@ -5,3 +5,72 @@
     object-fit: contain;
     filter: invert(1);
 }
+
+.search-menu {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: none;
+}
+
+.search-menu.block {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: block;
+}
+
+.back-arrow {
+    position: absolute;
+    object-fit: contain;
+    width: 2%;
+    top: 7rem;
+    left: 0px;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.search-inside-menu {
+    object-fit: contain;
+    width: 6%;
+    filter: invert(1);
+    margin-right: 10px;
+}
+
+form {
+    position: absolute;
+    top: 7rem;
+    margin: 0 -10%;
+}
+
+input {
+    border: 2px solid burlywood;
+    width: 15rem;
+    background: #00000059;
+    padding: 4px;
+    color: white;
+}
+
+.Colomn {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.body-for-search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: #403a3a;
+    z-index: 1;
+    opacity: 84%;
+    transition-timing-function: ease-in-out;
+    transition: all 0.5s;
+}
+
+.root {
+    overflow: hidden;
+    position: fixed;
+}
