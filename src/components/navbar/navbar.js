@@ -4,6 +4,7 @@ import './navbar.css';
 import fire from '../navbar/images/fire.jpg';
 import HamburgerMenu from '../navbar/HamburgerMenu/HamburgerMenu';
 import Search from './Search/Search';
+import requests from '../../environments/environments';
 
 const Navbar = () => {
     const [show, getScroll] = useState(false);
@@ -22,7 +23,7 @@ const Navbar = () => {
         <div className={`Nav ${show && "nav_black"}`}>
             <HamburgerMenu></HamburgerMenu>
             <img className="Logo" src={fire}></img>
-            <Search></Search>
+            <Search fetchUrl={requests.fetchSearch}></Search>
             <NavDropdown title="Settings" id="collasible-nav-dropdown" className="dropdown">
                 <NavDropdown.Item href="#action/3.1">Any help?</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Contact us!</NavDropdown.Item>
