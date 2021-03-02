@@ -11,6 +11,8 @@
     height: 100%;
     z-index: 2;
     display: none;
+    transition-timing-function: ease-in-out;
+    transition: all 0.5s;
 }
 
 .search-menu.block {
@@ -21,34 +23,34 @@
 }
 
 .back-arrow {
-    position: absolute;
+    position: fixed;
     object-fit: contain;
     width: 2%;
-    top: 7rem;
-    left: 0px;
+    top: 1rem;
+    left: 1rem;
     filter: invert(1);
     cursor: pointer;
 }
 
 .search-inside-menu {
     object-fit: contain;
-    width: 6%;
+    width: 5%;
     filter: invert(1);
     margin-right: 10px;
 }
 
 form {
     position: absolute;
-    top: 7rem;
+    top: 2rem;
     margin: 0 -10%;
 }
 
 input {
-    border: 2px solid burlywood;
+    border: 1px solid #730000c4;
     width: 15rem;
-    background: #00000059;
-    padding: 4px;
-    color: white;
+    background: #030000a1;
+    padding: 5px;
+    color: #ff5252b5;
 }
 
 .Colomn {
@@ -63,11 +65,9 @@ input {
     right: 0;
     width: 100%;
     height: 100vh;
-    background: #403a3a;
+    background: #210000;
     z-index: 1;
-    opacity: 84%;
-    transition-timing-function: ease-in-out;
-    transition: all 0.5s;
+    opacity: 98%;
 }
 
 .root {
@@ -77,18 +77,22 @@ input {
 
 .card-list {
     width: 100%;
-    height: 100vh;
-    position: fixed;
     position: absolute;
-    top: 15rem;
+    top: 7rem;
     left: 0;
+    height: 30rem;
+    padding-bottom: 2rem;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    grid-gap: 5px;
     gap: 5px;
     justify-content: center;
-    background-color: white;
+    background-color: transparent;
     overflow-y: scroll;
-    padding: 20px;
+    overflow-x: hidden;
+    padding: 10px;
+    transition-timing-function: ease-in-out;
+    transition: all linear 2s;
 }
 
 .card-root {
@@ -102,4 +106,6 @@ input {
 .card-image {
     width: 100%;
     height: 100%;
+    transition-timing-function: ease-in-out;
+    transition: all 4s;
 }
