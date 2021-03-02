@@ -1,10 +1,30 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './firstMain.module.css';
 import {Container, Row, Col, Button} from 'react-bootstrap';
+import axios from '../../axios/axios';
+import requests from '../../environments/environments';
 
-const firstMain = () => {
+const FirstMain = () => {
+    const [movie, setMovies] = useState([]);
+
+    useEffect(() => {
+        async function fetchBanner() {
+            const mov = await axios.get(requests.fetchOriginals);
+            console.log('fetchBanner:',mov.data.results[Math.floor(Math.random() * mov.data.results.length - 1)])
+            setMovies(mov.data.results[Math.floor(Math.random() * mov.data.results.length - 1)])
+            return mov;
+        }
+        fetchBanner(); 
+    }, [])
+
+    console.log(movie);
+
+
     return (
-        <Container className={styles.FirstMain}>
+        <Container className={styles.FirstMain} style={{
+            backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`,
+            backgroundPosition: "center center no-repeat", 
+            backgroundSize: "cover"}}>
             <Row className="">
                 <Col sm={12}>
                     <h1 className={styles.h1}>All Your Favorite Movies in the Same Place</h1>
@@ -17,4 +37,4 @@ const firstMain = () => {
     )
 }
 
-export default firstMain;
+export default FirstMain;
