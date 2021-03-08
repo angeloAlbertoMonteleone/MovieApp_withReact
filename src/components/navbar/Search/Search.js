@@ -65,12 +65,12 @@ function Search({fetchUrl}) {
                         ): null}
                     </div>
 
-                    <div className="card-content" style={{display : image ? "block" : "none"}}>
+                    {/* <div className="card-content" style={{display : image ? "block" : "none"}}>
                         <h3>{movie.title}</h3>
                         <p>RELEASE DATE: {movie.release_date}</p>
                         <p>RATING: {movie.vote_average}</p>
                         <p className="card-description">{movie.overview}</p>
-                    </div>
+                    </div> */}
 
             </Container>
             <div className="body-for-search" onClick={() => {getOpen(false)
