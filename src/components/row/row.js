@@ -4,11 +4,16 @@ import './row.css';
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 import Aux from '../../Auxiliary/Auxiliary';
+import { Form } from "react-bootstrap";
 const BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
 function Row({title, fetchUrl, smallerRow}) {
+    /* useState to fetch movies */
     const [movies, setMovies] = useState([]);
+    /* useState to set Trailer Url for clicked movie */
     const [trailerUrl, setTrailerUrl] = useState("");
+    /* useState to get Description content for clicked movie */
+    const [description, setDecription] = useState([]);
 
     useEffect(() => {
         async function fetchData(){ 
@@ -23,8 +28,6 @@ function Row({title, fetchUrl, smallerRow}) {
     console.log('movies', movies);
     
     const opts = {
-        height: '390px',
-        width: '100%',
         playerVars: {
             autoplay:1,
         }
@@ -42,10 +45,16 @@ function Row({title, fetchUrl, smallerRow}) {
             catch((error) => console.log(error));
         }
     }
+    
+    const handleClickForDescription = (movie) => {
+            
+        }
+    
+
 
 
     return (
-        <Aux>
+        <Aux className="root">
             <div className="row-movies">
                 {/* title */}
                 <h5>{title}</h5>
@@ -54,7 +63,10 @@ function Row({title, fetchUrl, smallerRow}) {
                 <div className="container_posters">
                     {movies && movies.length > 0 ? movies.map(movie => (
                         <img
-                        onClick={() => handleClickForTrailer(movie)} 
+                        onClick={() => {
+                            handleClickForTrailer(movie)
+                            
+                        }} 
                         className={`poster ${smallerRow && "smaller_row"}`} 
                         src={`${BASE_IMAGE_URL}${movie.poster_path}`} 
                         key={movie.id} 
@@ -63,11 +75,16 @@ function Row({title, fetchUrl, smallerRow}) {
                 </div>
             </div>
             
-            <div className="movieTrailer-container">
-                {trailerUrl && <YouTube videoId={trailerUrl} opts={opts}></YouTube>}
+            
+            <div className="bodyTrailer">
             </div>
-        
-            <div className="bodyTrailer"></div>
+                    
+            <div className="movieTrailer-container">
+                    {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} className="youtube-trailer"></YouTube>}
+                    <div className="movie-description">
+                        <h1>{movie.title}</h1>
+                    </div>
+            </div>        
         </Aux>
     ) 
 }
