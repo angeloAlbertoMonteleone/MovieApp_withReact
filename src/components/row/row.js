@@ -15,6 +15,8 @@ function Row({title, fetchUrl, smallerRow}) {
     /* useState to get Description content for clicked movie */
     const [description, setDecription] = useState([]);
 
+    const [closed, setOpenMenu] = useState(true);
+
     useEffect(() => {
         async function fetchData(){ 
             const request = await axios.get(fetchUrl);
@@ -40,16 +42,17 @@ function Row({title, fetchUrl, smallerRow}) {
             movieTrailer(movie?.title || "")
             .then(url => {
                 const urlParams = new URLSearchParams(new URL(url).search);
-                setTrailerUrl(urlParams.get('v'));  
+                setTrailerUrl(urlParams.get('v'));
             }).
             catch((error) => console.log(error));
         }
     }
+
     
     const handleClickForDescription = (movie) => {
-            
-        }
-    
+        setDecription([movie.title, movie.overview, movie.vote_average, movie.release_date]);
+    }
+        console.log(description);
 
 
 
@@ -65,7 +68,8 @@ function Row({title, fetchUrl, smallerRow}) {
                         <img
                         onClick={() => {
                             handleClickForTrailer(movie)
-                            
+                            handleClickForDescription(movie)
+                            setOpenMenu(false)
                         }} 
                         className={`poster ${smallerRow && "smaller_row"}`} 
                         src={`${BASE_IMAGE_URL}${movie.poster_path}`} 
@@ -76,13 +80,18 @@ function Row({title, fetchUrl, smallerRow}) {
             </div>
             
             
-            <div className="bodyTrailer">
+            <div className="bodyTrailer" style={{display: !closed ? "block" : "none"}} onClick={() => setOpenMenu(true)}>
             </div>
                     
-            <div className="movieTrailer-container">
+            <div className="movieTrailer-container closed" style={{display : !closed ? "block" : "none"}}>
                     {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} className="youtube-trailer"></YouTube>}
                     <div className="movie-description">
-                        <h1>{movie.title}</h1>
+                        <div>
+                            <h1>{description[0]}</h1>
+                            <h3>{description[2]}</h3>
+                            <h5>{description[3]}</h5>
+                        </div>
+                        <h2>{description[1]}</h2>
                     </div>
             </div>        
         </Aux>
