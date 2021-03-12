@@ -1,3 +1,7 @@
+* {
+    font-family: 'Work Sans', sans-serif;
+}
+
 .root {
     display: flex;
 }
@@ -5,7 +9,6 @@
 h5 {
     color: white;
     font-size: larger;
-    font-family: serif;
     padding-top: 0.2rem;
 }
 
@@ -45,10 +48,8 @@ h5 {
     right: 0;
     width: 100%;
     height: 100vh;
-    background: #210000;
+    background: #71666685;
     z-index: 1;
-    opacity: 15%;
-    display: none;
 }
 
 .movieTrailer-container {
@@ -60,15 +61,36 @@ h5 {
     transform: translate(-50%);
     width: 70%;
     height: 35rem;
-    background-color: white;
+    background-color: black;
     z-index: 1;
+    overflow-y: scroll;
 }
 
 .youtube-trailer {
-    width: 100%;
-    height: 380px;
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    height: 350px;
 }
 
 .video-stream.html5-main-video {
     width: 100%;
+}
+
+.movie-description {
+    text-align: center;
+}
+
+.movie-description h1 {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 2rem;
+}
+
+.movie-description h2 {
+    color: #dbdada;
+    text-align: justify;
+    padding: 0 10px 0;
+    font-size: 1rem;
 }
