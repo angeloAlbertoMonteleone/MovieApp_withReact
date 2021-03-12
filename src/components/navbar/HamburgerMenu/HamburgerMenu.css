@@ -14,7 +14,7 @@
 }
 
 .hamburgerMenu {
-    width: 35%;
+    width: 30%;
     height: 100%;
     position: absolute;
     left: 0;
@@ -30,9 +30,8 @@
     right: 0;
     width: 100%;
     height: 100vh;
-    background: #523636;
+    background: #71666685;
     z-index: -20;
-    opacity: 60%;
     transition-timing-function: ease-in-out;
     transition: all 0.5s;
 }
