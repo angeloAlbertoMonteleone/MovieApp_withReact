@@ -1,7 +1,28 @@
 .FirstMain {
     max-width: 100%;
-    background: black url(./images/pexels.jpg) center center no-repeat; background-size: cover; height: 31rem; display: flex; justify-content: center;align-items: center; text-align: center;
+    background: black url(./images/pexels.jpg) center center no-repeat;
+    background-size: cover;
+    height: 31rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-.h1 {color: white; margin-bottom: 15px; font-size: 2.3rem; font-family: serif;}
-.h3 {color: white; margin-bottom: 40px;font-size: larger; font-family: serif;}
-.Button {font-family: fantasy;margin: 20px; font-size: initial; width: 9rem;}
+
+.h1 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 2.3rem;
+}
+
+.h3 {
+    color: white;
+    margin-bottom: 40px;
+    font-size: larger;
+}
+
+.Button {
+    margin: 20px;
+    font-size: initial;
+    width: 9rem;
+}
