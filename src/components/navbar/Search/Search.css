@@ -69,7 +69,7 @@ input {
     right: 0;
     width: 100%;
     height: 100vh;
-    background: #210000;
+    background: #71666685;
     z-index: 1;
     opacity: 98%;
 }
@@ -96,7 +96,7 @@ input {
     overflow-x: hidden;
     padding: 10px;
     transition-timing-function: ease-in-out;
-    transition: all linear 2s;
+    transition: all linear 0.5s;
 }
 
 .card-root {
