@@ -31,7 +31,7 @@ function Row({title, fetchUrl, smallerRow}) {
     
     const opts = {
         playerVars: {
-            autoplay:1,
+            autoplay: 0,
         }
     };
 
