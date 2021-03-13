@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {NavDropdown }from 'react-bootstrap';
 import './navbar.css';
-import fire from '../navbar/images/fire.jpg';
+// import fire from '../../../src/images/firee.png';
 import HamburgerMenu from '../navbar/HamburgerMenu/HamburgerMenu';
 import Search from './Search/Search';
 import requests from '../../environments/environments';
+
 
 const Navbar = () => {
     const [show, getScroll] = useState(false);
@@ -22,7 +23,7 @@ const Navbar = () => {
     return (
         <div className={`Nav ${show && "nav_black"}`}>
             <HamburgerMenu></HamburgerMenu>
-            <img className="Logo" src={fire}></img>
+            {/* <img className="Logo" src={fire}></img> */}
             <Search fetchUrl={requests.fetchSearch}></Search>
             <NavDropdown title="Settings" id="collasible-nav-dropdown" className="dropdown">
                 <NavDropdown.Item href="#action/3.1">Any help?</NavDropdown.Item>
