@@ -3,6 +3,7 @@ import styles from './firstMain.module.css';
 import {Container, Row, Col, Button} from 'react-bootstrap';
 import axios from '../../axios/axios';
 import requests from '../../environments/environments';
+import fire from '../../images/firee.png';
 
 const FirstMain = () => {
     const [movie, setMovies] = useState([]);
@@ -27,7 +28,8 @@ const FirstMain = () => {
             backgroundSize: "cover"}}>
             <Row className="">
                 <Col sm={12}>
-                    <h1 className={styles.h1}>All Your Favorite Movies in the Same Place</h1>
+                    <img className="Logo" src={fire}></img>
+                    {/* <h1 className={styles.h1}>All Your Favorite Movies in the Same Place</h1> */}
                     <h3 className={styles.h3}>Check all the Categories, Personal Lists, Tv Shows, and free Streaming</h3>
                     <Button className={styles.Button} variant="outline-light">New Releases</Button>{' '}
                     <Button className={styles.Button} variant="outline-light">My List</Button>{' '}
