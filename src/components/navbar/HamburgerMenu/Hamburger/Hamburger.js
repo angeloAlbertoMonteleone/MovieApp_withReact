@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from '../../../../axios/axios';
 import './Hamburger.css';
-import fire from '../../images/fire.jpg';
+import fire from '../../../../images/firee.png';
 
 function Hamburger({fetchUrl}) {
     const [genres, setGenres] = useState([]);
