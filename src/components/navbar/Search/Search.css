@@ -113,3 +113,46 @@ input {
     transition-timing-function: ease-in-out;
     transition: all 4s;
 }
+
+.movieTrailer-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 70%;
+    height: 35rem;
+    background-color: black;
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+.youtube-trailer {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    height: 350px;
+}
+
+.video-stream.html5-main-video {
+    width: 100%;
+}
+
+.movie-description {
+    text-align: center;
+}
+
+.movie-description h1 {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 2rem;
+}
+
+.movie-description h2 {
+    color: #dbdada;
+    text-align: justify;
+    padding: 0 10px 0;
+    font-size: 1rem;
+}
