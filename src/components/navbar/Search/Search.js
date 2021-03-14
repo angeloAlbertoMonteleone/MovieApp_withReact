@@ -5,6 +5,9 @@ import search from '../images/search.svg';
 import './Search.css';
 import arrowLeft from '../images/arrow-left.svg';
 import Aux from '../../../Auxiliary/Auxiliary';
+import YouTube from 'react-youtube';
+import movieTrailer from "movie-trailer";
+
 const IMAGE_BASEURL = 'https://image.tmdb.org/t/p/w500/';
 
 function Search({fetchUrl}) {
@@ -16,6 +19,12 @@ function Search({fetchUrl}) {
     const [query, setQuery] = useState('');
     /* create the state for movies, and update the state appropriate */
     const [movies, setMovies] = useState([]);
+    /* useState to get Description content for clicked movie */
+    const [description, setDecription] = useState([]);
+    /* useState to set Trailer Url for clicked movie */
+    const [trailerUrl, setTrailerUrl] = useState("");
+    /* create trailer-menu opening onClick */
+    const [closed, setOpenMenu] = useState(true);
             
             async function getMovie(e) {
                 e.preventDefault();
@@ -29,6 +38,31 @@ function Search({fetchUrl}) {
                 setMovies([]);
                 setQuery('')
             }
+            
+            const opts = {
+                playerVars: {
+                    autoplay: 0,
+                }
+            };
+
+            const handleClickForTrailer = (movie) => {
+                if(trailerUrl) {
+                    setTrailerUrl('');
+                } else {
+                    movieTrailer(movie?.title || "")
+                    .then(url => {
+                        const urlParams = new URLSearchParams(new URL(url).search);
+                        setTrailerUrl(urlParams.get('v'));
+                    }).
+                    catch((error) => console.log(error));
+                }
+            }
+        
+            const handleClickForDescription = (movie) => {
+                setDecription([movie.title, movie.overview, movie.vote_average, movie.release_date]);
+            }
+                console.log(description);
+        
     return (
         <Aux>
             <img className="search" src={search} onClick={() => {getOpen(true)}} style={{display : open ? "none" : "block"}}></img>
@@ -56,13 +90,29 @@ function Search({fetchUrl}) {
                         {movies && movies.length > 0 ? movies.filter((film) => film.poster_path).map((movie) => {
                             return (
                             <Aux className="card-root">
-                                <img className="card-image" onClick={(image) => openImage(image)}
+                                <img className="card-image" onClick={() => {
+                                    handleClickForTrailer(movie)
+                                    handleClickForDescription(movie)
+                                    setOpenMenu(false)}
+                                }
                                 src={IMAGE_BASEURL + movie.poster_path}
                                 alt={movie.title + ' poster'}
                                 key={movie.id}></img>
                             </Aux>
                         )}
                         ): null}
+                    </div>
+
+                    <div className="movieTrailer-container" style={{display : !closed ? "block" : "none"}}>
+                    {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} className="youtube-trailer"></YouTube>}
+                        <div className="movie-description">
+                            <div>
+                                <h1>{description[0]}</h1>
+                                <h3>{description[2]}</h3>
+                                <h5>{description[3]}</h5>
+                            </div>
+                            <h2>{description[1]}</h2>
+                        </div>
                     </div>
 
                     {/* <div className="card-content" style={{display : image ? "block" : "none"}}>
@@ -73,8 +123,11 @@ function Search({fetchUrl}) {
                     </div> */}
 
             </Container>
-            <div className="body-for-search" onClick={() => {getOpen(false)
-            console.log('clicked by body')}} style={{display : open ? "block" : "none"}} ></div>
+            <div className="body-for-search" 
+            onClick={() => {getOpen(false);
+                            reset();
+                            console.log('clicked by body')}} 
+            style={{display : open ? "block" : "none"}} ></div>
 
             
         </Aux>
