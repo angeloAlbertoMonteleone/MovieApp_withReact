@@ -39,7 +39,7 @@ function Row({title, fetchUrl, smallerRow}) {
         if(trailerUrl) {
             setTrailerUrl('');
         } else {
-            movieTrailer(movie?.title || "")
+            movieTrailer(movie?.title || movie?.name || "")
             .then(url => {
                 const urlParams = new URLSearchParams(new URL(url).search);
                 setTrailerUrl(urlParams.get('v'));
@@ -50,7 +50,7 @@ function Row({title, fetchUrl, smallerRow}) {
 
     
     const handleClickForDescription = (movie) => {
-        setDecription([movie.title, movie.overview, movie.vote_average, movie.release_date]);
+        setDecription([(movie.title || movie.name), movie.overview, movie.vote_average, movie.release_date]);
     }
         console.log(description);
 
