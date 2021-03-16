@@ -48,20 +48,25 @@ function Search({fetchUrl}) {
             const handleClickForTrailer = (movie) => {
                 if(trailerUrl) {
                     setTrailerUrl('');
+                    setOpenMenu(true);
                 } else {
-                    movieTrailer(movie?.title || "")
+                    movieTrailer(movie?.title || movie.name || "")
                     .then(url => {
                         const urlParams = new URLSearchParams(new URL(url).search);
                         setTrailerUrl(urlParams.get('v'));
+                        setOpenMenu(false);
                     }).
                     catch((error) => console.log(error));
                 }
             }
         
             const handleClickForDescription = (movie) => {
-                setDecription([movie.title, movie.overview, movie.vote_average, movie.release_date]);
-            }
-                console.log(description);
+                        setDecription([movie.title, movie.overview, movie.vote_average, movie.release_date]);
+                }
+            console.log(description);
+                
+
+            
         
     return (
         <Aux>
@@ -91,10 +96,9 @@ function Search({fetchUrl}) {
                             return (
                             <Aux className="card-root">
                                 <img className="card-image" onClick={() => {
-                                    handleClickForTrailer(movie)
                                     handleClickForDescription(movie)
-                                    setOpenMenu(false)}
-                                }
+                                    handleClickForTrailer(movie)
+                                }}
                                 src={IMAGE_BASEURL + movie.poster_path}
                                 alt={movie.title + ' poster'}
                                 key={movie.id}></img>
@@ -124,9 +128,11 @@ function Search({fetchUrl}) {
 
             </Container>
             <div className="body-for-search" 
-            onClick={() => {getOpen(false);
-                            reset();
-                            console.log('clicked by body')}} 
+                 onClick={() => {
+                    getOpen(false);
+                    reset();
+                    setOpenMenu(true);
+                    console.log('clicked by body')}} 
             style={{display : open ? "block" : "none"}} ></div>
 
             
