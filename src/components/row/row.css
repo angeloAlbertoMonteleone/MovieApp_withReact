@@ -37,9 +37,9 @@ h5 {
     overflow-y: hidden;
 }
 
-.smaller_row {
+.bigger_row {
     width: 100%;
-    max-height: 300px;
+    max-height: 200px;
 }
 
 .bodyTrailer {
