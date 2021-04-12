@@ -27,13 +27,12 @@
 }
 
 .back-arrow {
-    position: fixed;
-    object-fit: contain;
-    width: 2%;
+    min-width: 35px;
+    width: 35px;
+    position: absolute;
     top: 1rem;
     left: 1rem;
     filter: invert(1);
-    cursor: pointer;
 }
 
 .search-inside-menu {
@@ -41,37 +40,29 @@
     width: 5%;
     filter: invert(1);
     margin-right: 10px;
+    min-width: 20px;
 }
 
 form {
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 2rem;
-    margin: 0 -10%;
+    margin: 0 auto;
 }
 
 input {
-    border: 1px solid #730000c4;
+    border: 1px solid rgb(122, 247, 226);
     width: 15rem;
     background: #030000a1;
     padding: 5px;
-    color: #ff5252b5;
+    color: rgb(122, 247, 226);
 }
 
 .Colomn {
     height: 100%;
     display: flex;
     justify-content: center;
-}
-
-.body-for-search {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background: #71666685;
-    z-index: 1;
-    opacity: 98%;
 }
 
 .root {
@@ -118,21 +109,21 @@ input {
     position: fixed;
     display: flex;
     justify-content: center;
-    top: 5%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%);
     width: 70%;
     height: 35rem;
     background-color: black;
-    z-index: 1;
+    z-index: 5;
     overflow-y: scroll;
 }
 
-.youtube-trailer {
+iframe.youtube-trailer {
     display: flex;
     margin: 0 auto;
-    width: 80%;
-    height: 350px;
+    width: 100%;
+    min-height: 350px;
 }
 
 .video-stream.html5-main-video {
@@ -141,12 +132,12 @@ input {
 
 .movie-description {
     text-align: center;
+    padding: 10px;
+    padding-bottom: 4rem;
 }
 
 .movie-description h1 {
     color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
     font-size: 2rem;
 }
 
@@ -155,4 +146,40 @@ input {
     text-align: justify;
     padding: 0 10px 0;
     font-size: 1rem;
+}
+
+.body-to-close-movieTrailer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: #71666685;
+    z-index: 1;
+    opacity: 98%;
+}
+
+@media (max-width: 800px) {
+    div.card-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    div.card-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    div.movieTrailer-container {
+        width: 100%;
+        top: 20%;
+    }
+}
+
+@media (max-width: 400px) {
+    div.card-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .search-inside-menu {
+        display: none;
+    }
 }
