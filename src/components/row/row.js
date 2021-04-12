@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
 import axios from '../../axios/axios';
+import {Row, Col} from 'react-bootstrap';
 import './row.css';
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 import Aux from '../../Auxiliary/Auxiliary';
-import { Form } from "react-bootstrap";
 const BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
-function Row({title, fetchUrl, smallerRow}) {
+function MovieRow({title, fetchUrl, biggerRow, className}) {
     /* useState to fetch movies */
     const [movies, setMovies] = useState([]);
     /* useState to set Trailer Url for clicked movie */
@@ -55,7 +55,6 @@ function Row({title, fetchUrl, smallerRow}) {
         console.log(description);
 
 
-
     return (
         <Aux className="root">
             <div className="row-movies">
@@ -71,8 +70,8 @@ function Row({title, fetchUrl, smallerRow}) {
                             handleClickForDescription(movie)
                             setOpenMenu(false)
                         }} 
-                        className={`poster ${smallerRow && "smaller_row"}`} 
-                        src={`${BASE_IMAGE_URL}${movie.poster_path}`} 
+                        className={`poster ${biggerRow && "bigger_row"}`} 
+                        src={className === "biggerRow" ? `${BASE_IMAGE_URL}${movie.backdrop_path}` : `${BASE_IMAGE_URL}${movie.poster_path}`} 
                         key={movie.id} 
                         alt={movie.name}></img>))
                     : console.log('error: ',movies)}
@@ -85,17 +84,15 @@ function Row({title, fetchUrl, smallerRow}) {
                     
             <div className="movieTrailer-container closed" style={{display : !closed ? "block" : "none"}}>
                     {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} className="youtube-trailer"></YouTube>}
-                    <div className="movie-description">
-                        <div>
-                            <h1>{description[0]}</h1>
-                            <h3>{description[2]}</h3>
-                            <h5>{description[3]}</h5>
-                        </div>
-                        <h2>{description[1]}</h2>
-                    </div>
+                    <Row className="movie-description">
+                        <Col xs="auto"><h1>{description[0]}</h1></Col>
+                        <Col xs="auto"><h3>{description[2]}</h3></Col>
+                        <Col xs="auto"><h5>{description[3]}</h5></Col>
+                        <Col sm={12}><h2>{description[1]}</h2></Col>
+                    </Row>
             </div>        
         </Aux>
     ) 
 }
 
-export default Row;
+export default MovieRow;
