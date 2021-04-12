@@ -3,7 +3,6 @@
     height: 20px;
     padding: 2px;
     margin: 0 10px;
-    cursor: pointer;
 }
 
 .ham {
@@ -24,14 +23,14 @@
     transition: all 1s;
 }
 
-.body {
+.body-next-HAM {
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
     height: 100vh;
     background: #71666685;
-    z-index: -20;
+    z-index: -1;
     transition-timing-function: ease-in-out;
     transition: all 0.5s;
 }
@@ -39,4 +38,10 @@
 .root {
     overflow: hidden;
     position: fixed;
+}
+
+@media (max-width: 599px) {
+    .hamburgerMenu {
+        min-width: 250px;
+    }
 }
