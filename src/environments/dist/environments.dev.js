@@ -19,7 +19,8 @@ var requests = {
   fetchThrillers: "/discover/movie?api_key=".concat(API_KEY, "&with_genres=53"),
   fetchHorrors: "/discover/movie?api_key=".concat(API_KEY, "&with_genres=27"),
   fetchGenres: "/genre/movie/list?api_key=".concat(API_KEY, "&language=en-US"),
-  fetchSearch: "/search/movie?api_key=".concat(API_KEY, "&query=")
+  fetchSearch: "/search/movie?api_key=".concat(API_KEY, "&query="),
+  fetchLatest: "/movie/latest?api_key=".concat(API_KEY, "&language=en-US")
 };
 var _default = requests;
 exports["default"] = _default;
