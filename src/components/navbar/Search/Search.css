@@ -102,7 +102,12 @@ input {
     width: 100%;
     height: 100%;
     transition-timing-function: ease-in-out;
-    transition: all 4s;
+    transition: 400ms;
+    padding: 5px;
+}
+
+.card-image:hover {
+    transform: scale(1.2);
 }
 
 .movieTrailer-container {
@@ -117,6 +122,12 @@ input {
     background-color: black;
     z-index: 5;
     overflow-y: scroll;
+}
+
+.col-sm-4 {
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 iframe.youtube-trailer {
