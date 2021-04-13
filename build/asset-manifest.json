@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.80e1ab00.chunk.css",
+    "main.js": "./static/js/main.3f2da2a8.chunk.js",
+    "main.js.map": "./static/js/main.3f2da2a8.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.c303d2b6.js",
+    "runtime-main.js.map": "./static/js/runtime-main.c303d2b6.js.map",
+    "static/js/2.9f3910e8.chunk.js": "./static/js/2.9f3910e8.chunk.js",
+    "static/js/2.9f3910e8.chunk.js.map": "./static/js/2.9f3910e8.chunk.js.map",
+    "static/js/3.3051152c.chunk.js": "./static/js/3.3051152c.chunk.js",
+    "static/js/3.3051152c.chunk.js.map": "./static/js/3.3051152c.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.80e1ab00.chunk.css.map": "./static/css/main.80e1ab00.chunk.css.map",
+    "static/js/2.9f3910e8.chunk.js.LICENSE.txt": "./static/js/2.9f3910e8.chunk.js.LICENSE.txt",
+    "static/media/firee.8862b618.png": "./static/media/firee.8862b618.png",
+    "static/media/hand-point-left.b87831ef.svg": "./static/media/hand-point-left.b87831ef.svg",
+    "static/media/firstMain.module.css": "./static/media/pexels.c914df4b.jpg",
+    "static/media/search.ac0d491a.svg": "./static/media/search.ac0d491a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c303d2b6.js",
+    "static/js/2.9f3910e8.chunk.js",
+    "static/css/main.80e1ab00.chunk.css",
+    "static/js/main.3f2da2a8.chunk.js"
+  ]
+}
