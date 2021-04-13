@@ -66,6 +66,12 @@ h5 {
     overflow-y: scroll;
 }
 
+.col-sm-4 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
 .youtube-trailer {
     display: flex;
     margin: 0 auto;
