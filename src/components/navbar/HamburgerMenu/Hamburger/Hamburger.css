@@ -80,6 +80,10 @@
     transition: transform 450ms;
 }
 
+.image:hover {
+    transform: scale(1.5);
+}
+
 .youtube-trailer-HAM {
     position: absolute;
     top: 68%;
@@ -117,5 +121,5 @@ h1.menu-title {
     margin: 1rem;
     text-align: center;
     color: white;
-    text-shadow: 3px 0 #652929;
+    text-shadow: 1px 1px rgb(122, 247, 226);
 }
