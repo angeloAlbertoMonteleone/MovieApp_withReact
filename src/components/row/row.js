@@ -85,9 +85,9 @@ function MovieRow({title, fetchUrl, biggerRow, className}) {
             <div className="movieTrailer-container closed" style={{display : !closed ? "block" : "none"}}>
                     {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} className="youtube-trailer"></YouTube>}
                     <Row className="movie-description">
-                        <Col xs="auto"><h1>{description[0]}</h1></Col>
-                        <Col xs="auto"><h3>{description[2]}</h3></Col>
-                        <Col xs="auto"><h5>{description[3]}</h5></Col>
+                        <Col sm={4}><h1>{description[0]}</h1></Col>
+                        <Col sm={4}><h3>{description[2]}</h3></Col>
+                        <Col sm={4}><h5>{description[3]}</h5></Col>
                         <Col sm={12}><h2>{description[1]}</h2></Col>
                     </Row>
             </div>        
