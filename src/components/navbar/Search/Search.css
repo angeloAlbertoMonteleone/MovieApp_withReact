@@ -165,9 +165,11 @@ iframe.youtube-trailer {
     right: 0;
     width: 100%;
     height: 100vh;
-    background: #71666685;
+    -webkit-background-composite: #71666685;
+    -webkit-background-origin: #71666685;
+    -webkit-background-clip: #71666685;
+    background-color: #71666685;
     z-index: 1;
-    opacity: 98%;
 }
 
 @media (max-width: 800px) {
@@ -186,11 +188,22 @@ iframe.youtube-trailer {
     }
 }
 
+@media (max-width:570px) {
+    .back-arrow {
+        top: -0rem;
+        left: -2rem;
+    }
+}
+
 @media (max-width: 400px) {
     div.card-list {
         grid-template-columns: repeat(2, 1fr);
     }
     .search-inside-menu {
         display: none;
+    }
+    .back-arrow {
+        top: -0.5rem;
+        left: -2rem;
     }
 }
