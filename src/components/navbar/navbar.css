@@ -18,6 +18,10 @@ img.search {
     z-index: -1;
 }
 
+.dropdown {
+    z-index: -1;
+}
+
 .Logo {
     padding: 0 5px;
     margin-bottom: 20px;
